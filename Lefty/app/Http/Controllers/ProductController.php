@@ -6,12 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 
 class ProductController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         $products= Product::orderBy('id', 'desc')->get();
         return view('products.index', ['products' =>$products]);
         
     }
+
+    public function handleAdmin()
+    {
+        return view('admin');
+    }    
+
     public function show($id){
         $product = Product::findOrFail($id);
             return view('products.show', ['product' => $product]);
