@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Lefty|Gaucher') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -41,12 +41,12 @@
                     Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Accessoires pour l'ordinateur</a>
-                    <a class="dropdown-item" href="#">Instruments Musicaux</a>
-                    <a class="dropdown-item" href="#">Papeterie</a>
-                    <a class="dropdown-item" href="#">Outils</a>
-                    <a class="dropdown-item" href="#">Cuisine</a>
-                    <a class="dropdown-item" href="#">Sport</a>
+                    <a class="dropdown-item" href="/category/5">Accessoires pour l'ordinateur</a>
+                    <a class="dropdown-item" href="/category/3">Instruments Musicaux</a>
+                    <a class="dropdown-item" href="/category/1">Papeterie</a>
+                    <a class="dropdown-item" href="/category/2">Outils</a>
+                    <a class="dropdown-item" href="/category/6">Cuisine</a>
+                    <a class="dropdown-item" href="/category/4">Sport</a>
                                     </li>
                     </ul>
 

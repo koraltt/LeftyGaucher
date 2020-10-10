@@ -49,7 +49,12 @@ class ProductController extends Controller
             
     
         }
+            // filtering categories
 
+            public function showCategory($category){
+                $products= Product::where('category_id', $category)->get();
+                return view('products.index', ['products' =>$products]);
+                }
 
 
 }
