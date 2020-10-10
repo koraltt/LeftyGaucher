@@ -14,7 +14,6 @@
 <div class="card-deck">
 
 
-
   <div class="frontCategory">
     <a href=""><img src="images/site/stationery.jpg" class="card-img-top" alt="..."></a>
     <div class="card-body">
