@@ -19,11 +19,19 @@ Route::get('/', function () {
 });
 
 Route::get('/products',[ProductController::class,'index'])->name('products');
+
+Route::group(['middleware' => ['admin']], function () {
 Route::get('/admin/products', [ProductController::class,'handleAdmin'])->name('admin.route')->middleware('admin');
-Route::get('/products/create', [ProductController::class,'create'])->name('products.create');
+Route::get('/products/create', [ProductController::class,'create'])->name('products.create')->middleware('admin');
+});
+
 Route::get('/products/{id}', [ProductController::class,'show'])->name('products.show');
-Route::post('/products', [ProductController::class,'store'])->name('products.store');
-Route::delete('/products/{id}', [ProductController::class,'destroy'])->name('products.destroy');
+
+Route::group(['middleware' => ['admin']], function () {
+Route::post('/products', [ProductController::class,'store'])->name('products.store')->middleware('admin');
+Route::delete('/products/{id}', [ProductController::class,'destroy'])->name('products.destroy')->middleware('admin');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

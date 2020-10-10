@@ -25,10 +25,10 @@ class CreateProductsTable extends Migration
             $table->float('regularPrice', 8, 2);
             $table->float('discountPrice', 8, 2);
             $table->string('categoryFr', 100);
-            $table->string('categoryEn', 100);
+            $table->string('categoryEng', 100);
             $table->string('imgUrl', 100);
             $table->string('imgUrl2', 100);
-            $table->boolean('deleted');
+            $table->boolean('deleted')->default(false);
             
         });
     }

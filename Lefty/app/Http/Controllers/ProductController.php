@@ -19,8 +19,8 @@ class ProductController extends Controller
 
     public function handleAdmin()
     {
-        return view('admin');
-    }    
+        return view('admin.admin');
+    } 
 
     public function show($id){
         $product = Product::findOrFail($id);
@@ -30,6 +30,48 @@ class ProductController extends Controller
         return view('products.create');
             }
 
+    public function store(Request $request){
+                $product= new Product();
+                $product->titleFr = request('titleFr');
+                $product->titleEng = request('titleEng');
+                $product->descriptionFr = request('descriptionFr');
+                $product->descriptionEng = request('descriptionEng');
+                $product->brand = request('brand');
+                $product->quantity = request('quantity');
+                $product->regularPrice = request('regularPrice');
+                $product->discountPrice = request('discountPrice');
+                $product->categoryFr = request('categoryFr');
+                $product->categoryEng = request('categoryEng');
+                
+                if($request->hasFile('imgUrl')){
+                    $file = $request->file('imgUrl');
+                    $destinationPath = 'images/';
+                    $fileName = $file->getClientOriginalName(); 
+                    $imagePath = $destinationPath.$fileName;
+                    $file->move($destinationPath, $fileName);
+                    $product->imgUrl = request($destinationPath, $imagePath);
+                
+                 }
+
+                 if($request->hasFile('imgUrl2')){
+                    $file = $request->file('imgUrl2');
+                    $destinationPath= 'images/';
+                    $fileName = $file->getClientOriginalName(); 
+                    $imagePath = $destinationPath.$fileName;
+                    $file->move($destinationPath, $fileName);
+                    $product->imgUrl2 = request($destinationPath, $imagePath);
+                
+                 }
+              
+                $product->save();
+                
+                return redirect('/')->with('mssg', "Le produit est sauvegardé");
+                error_log($product);
+                
+        
+     }
+    
+
 
 
     public function destroy($id) {
@@ -38,28 +80,7 @@ class ProductController extends Controller
             return redirect('/products');
         }
 
-        public function store(){
-            $product= new Product();
-            $product->frenchShort = request('frenchShort');
-            $product->engShort = request('engShort');
-            $product->frenchLong = request('frenchLong');
-            $product->engLong = request('engLong');
-            $product->brand = request('brand');
-            $product->price = request('price');
-            $product->discountPrice = request('discountPrice');
-            $product->categoryFr = request('categoryFr');
-            $product->categoryEn = request('categoryEn');
-            $product->imgName = request('imgName');
-            $product->imgName2 = request('imgName2');
-          
-            $product->save();
-            
-            return redirect('/')->with('mssg', "Le produit est sauvegardé");
-            errorr_log($product);
-            
-    
-        }
-
+        
 
 
 }
