@@ -30,6 +30,7 @@ Route::get('/products/{id}', [ProductController::class,'show'])->name('products.
 Route::group(['middleware' => ['admin']], function () {
 Route::post('/products', [ProductController::class,'store'])->name('products.store')->middleware('admin');
 Route::delete('/products/{id}', [ProductController::class,'destroy'])->name('products.destroy')->middleware('admin');
+Route::get('/category/{category}',[ProductController::class,'showCategory']);
 });
 
 Auth::routes();
