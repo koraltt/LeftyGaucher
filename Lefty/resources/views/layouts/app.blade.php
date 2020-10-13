@@ -28,9 +28,12 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('images/site/logoWhite.png') }}" width="auto" height="30" alt="" loading="lazy">
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+               
+               
                
                
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -48,6 +51,8 @@
                     <a class="dropdown-item" href="/category/6">Cuisine</a>
                     <a class="dropdown-item" href="/category/4">Sport</a>
                                     </li>
+                <li class="nav-item"><a class="nav-link" href="/admin">Admin</a> </li>
+                <li class="nav-item"><a class="nav-link" href='products/create'>Créer le produit </a> </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -63,11 +68,6 @@
                                 </li>
                             @endif
                         @else
-                         @if (auth()->user()->is_admin == 1)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('products.create') }}">Ajouter nouveau produit</a>
-                                </li>
-                                @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
