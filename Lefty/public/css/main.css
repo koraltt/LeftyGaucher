@@ -72,3 +72,73 @@
             border-radius: 0.25rem;
           }
           
+          @media (max-width: 576px) {
+            .card-deck {
+              display: flex;
+              flex-flow: row wrap;
+              margin-right: -15px;
+              margin-left: - 15px;
+            }
+        }
+
+       
+      
+        .specialH{
+          text-align: center;
+          display: block;
+          margin-bottom: 25px;
+         
+         
+
+        }
+      
+   
+
+      .card-deck{
+        justify-content: center;
+      }
+#modifyText{
+
+
+  background-color: white;
+  
+  margin-left: 10px;
+
+}
+
+      
+            
+
+    #detailsProduct{
+                border-color: darkgrey;
+             
+              }
+
+      #detailsBlock{
+        background-color: white;
+        position: relative;
+      }
+      .secondPhoto{
+       width: 30%;
+       display:block;
+
+  
+        
+      }
+      .details{
+       
+     margin-top: 10 px ;
+        margin-left: 20px;
+        font-size: 1.4em;
+        Padding: 20px;
+        background-color: #fff;
+        float: right;
+        width:60%;
+        margin-right: 20px;
+        
+             
+        
+        
+        
+
+      }

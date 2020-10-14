@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
 
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
@@ -5064,16 +5065,17 @@ input[type=button].btn-block {
 
 @media (min-width: 576px) {
   .card-deck {
+   
     display: flex;
     flex-flow: row wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 
   .card-deck .card {
     flex: 1 0 0%;
     margin-right: 15px;
-    margin-bottom: 0;
+    margin-bottom: 2em;
     margin-left: 15px;
   }
 }

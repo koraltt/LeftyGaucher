@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="frontCategory">
-  <a href="/category/5">"><img src="images/site/computerAcc.jpg" class="card-img-top" alt="..."></a>
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img-top" alt="..."></a>
     <div class="card-body">
     <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
     </div>
