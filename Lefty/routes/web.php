@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,10 @@ Route::get('/products/create', [ProductController::class,'create'])->name('produ
 });
 
 Route::get('/products/{id}', [ProductController::class,'show'])->name('products.show');
+
+Route::group(['middleware' => ['auth']], function () {
+Route::get('/profiles/{name}', [ProfileController::class,'show'])->name('profiles.show')->middleware('auth');
+});
 
 Route::group(['middleware' => ['admin']], function () {
 Route::post('/products', [ProductController::class,'store'])->name('products.store')->middleware('admin');
