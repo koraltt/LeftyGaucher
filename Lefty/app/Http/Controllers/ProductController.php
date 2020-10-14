@@ -16,6 +16,13 @@ class ProductController extends Controller
         return view('products.index', ['products' =>$products]);
         
     }
+    
+     // filtering categories
+
+            public function showCategory($category){
+                $products= Product::where('category_id', $category)->get();
+                return view('products.index', ['products' =>$products]);
+                }
 
     public function handleAdmin()
     {
