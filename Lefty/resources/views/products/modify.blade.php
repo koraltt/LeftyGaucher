@@ -113,7 +113,10 @@
         <span><img src="/images/<?php echo$products[0]->imgUrl; ?>"  alt="..."></span>
         
       </div>
-      <div class="col-2">
+     
+  </div>
+  <br>
+  <div class="col-1">
                 <form action = "/products/modify/<?php echo $products[0]->id; ?>" method = "post" >
             <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
@@ -125,8 +128,6 @@
           </form> 
 
             </div>
-  </div>
-  
 
 </div>
 

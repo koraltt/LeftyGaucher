@@ -166,8 +166,8 @@ class ProductController extends Controller
 
                    
             DB::table('products')->where('id',$id)->delete();
-           
-            return view('admin',['products' =>$products]);
+            return redirect('/admin')
+            ->with('success', 'Project deleted successfully');
         }
    
 
