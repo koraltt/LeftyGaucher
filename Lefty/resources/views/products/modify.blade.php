@@ -117,7 +117,7 @@
   </div>
   <br>
   <div class="col-1">
-                <form action = "/products/modify/<?php echo $products[0]->id; ?>" method = "post" >
+                <form action = "/products/delete/<?php echo $products[0]->id; ?>" method = "post" >
             <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
           

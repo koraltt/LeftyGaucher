@@ -40,7 +40,7 @@ class ProductController extends Controller
             } 
 
     public function create(){
-                return view('products.create');
+                return view('admin.create');
             }
 
     public function store(Request $request){
@@ -53,8 +53,10 @@ class ProductController extends Controller
                 $product->quantity = request('quantity');
                 $product->regularPrice = request('regularPrice');
                 $product->discountPrice = request('discountPrice');
+                $product->discountPrice = request('discountPrice');
+                $product->category_id = request('category_id');
                 $product->categoryFr = request('categoryFr');
-                $product->categoryEng = request('categoryEng');
+                $product->categoryEn = request('categoryEn');
                 
                 if($request->hasFile('imgUrl')){
                     $file = $request->file('imgUrl');
