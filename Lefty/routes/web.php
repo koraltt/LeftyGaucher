@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,7 @@ Route::delete('/admin/destroy/{id}', [ProductController::class,'destroy'])->name
 
 Route::get('/products',[ProductController::class,'index'])->name('products');
 Route::get('/category/{category}',[ProductController::class,'showCategory']);
-Route::get('/admin', [ProductController::class,'handleAdmin']);
+Route::get('/admin', [ProductController::class,'handleAdmin'])->name('admin');
 
 Route::get('/products/{id}', [ProductController::class,'show']);
 
@@ -54,9 +55,27 @@ Route::post('/products/delete/{id}', [ProductController::class,'delete']);
 
 
 
+
+
 Route::get('/admin/create', [ProductController::class,'create']);
 Route::post('/products', [ProductController::class,'store']);
+
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/* 
+Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
+Route::post('/add/{product}',  [CartController::class, 'add'])->name('cart.store');
+Route::post('/update',  [CartController::class, 'update'])->name('cart.update');
+Route::post('/remove',  [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/clear',  [CartController::class, 'clear'])->name('cart.clear'); */
+
+
+
+Route::get('/cart/add/{product}',  [CartController::class, 'add'])->name('cart.add')->middleware('auth');
+Route::get('/cart/destroy/{itemId}',  [CartController::class, 'destroy'])->name('cart.destroy')->middleware('auth');
+Route::get('/cart/update/{itemId}',  [CartController::class, 'update'])->name('cart.update')->middleware('auth');
+Route::get('/cart',  [CartController::class, 'index'])->name('cart.index')->middleware('auth');

@@ -15,11 +15,19 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    
+   <!--  favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/site/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/site/favicon-16x16.png">
+        <link rel="shortcut icon" href="/images/site/favicon.ico">
+  
 </head>
 <body>
     <div id="app">
@@ -42,7 +50,7 @@
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categories
+                    CATEGORIES
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/category/5">Accessoires pour l'ordinateur</a>
@@ -52,13 +60,27 @@
                     <a class="dropdown-item" href="/category/6">Cuisine</a>
                     <a class="dropdown-item" href="/category/4">Sport</a>
                                     </li>
-                <li class="nav-item"><a class="nav-link" href="/products">Voir tout</a> </li>
-                <li class="nav-item"><a class="nav-link" href="/admin">Admin</a> </li>
-                <li class="nav-item"><a class="nav-link" href="/admin/create">Créer le produit </a> </li>
+                <li class="nav-item"><a class="nav-link" href="/products">VOIR TOUT</a> </li>
+                <li class="nav-item"><a class="nav-link" href="/admin">ADMIN</a> </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/create">CRÉER LE PRODUIT </a> </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
+                   
+          
+                        
+                   
+
+                    
+            </ul>
                     <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{route('cart.index')}}"> PANIER <span class="badge badge-pill badge-dark">
+                           <i class="fas fa-shopping-cart"></i> {{ Cart::session(auth()->id())->getTotalQuantity()}} 
+                        </span></a>
+                </li>
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
