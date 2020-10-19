@@ -52,8 +52,9 @@
                     <a class="dropdown-item" href="/category/6">Cuisine</a>
                     <a class="dropdown-item" href="/category/4">Sport</a>
                                     </li>
+                <li class="nav-item"><a class="nav-link" href="/products">Voir tout</a> </li>
                 <li class="nav-item"><a class="nav-link" href="/admin">Admin</a> </li>
-                <li class="nav-item"><a class="nav-link" href='products/create'>Créer le produit </a> </li>
+                <li class="nav-item"><a class="nav-link" href="/admin/create">Créer le produit </a> </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-7">
+    <div class="col-md-8">
     <h2>Modifier le produit</h2>
       
 
@@ -93,12 +93,12 @@
 
 
         <div class="form-group">
-          <label for="imgUgl" >Photo</label>
-            <input type="text" name="imgUrl"  class="form-control" id="imgUrl" value = "<?php echo$products[0]->imgUrl; ?>">
+          <label for="imgUgl" >Photo à modifier <h6><?php echo$products[0]->imgUrl; ?><h/6></label>
+            <input type="file" name="imgUrl"  class="form-control" id="imgUrl"  >
         </div>
-        <div class="form-group">
-          <label for="imgUgl2" >Deuxième photo</label>
-            <input type="text" name="imgUrl2"  class="form-control" id="imgUrl2" value = "<?php echo$products[0]->imgUrl2; ?>"> 
+        <div class="form-group"> 
+          <label for="imgUgl2" >Deuxième photo à modifier <h6><?php echo$products[0]->imgUrl2; ?></h6></label>
+            <input type="file" name="imgUrl2"  class="form-control" id="imgUrl2"> 
          </div>
           <button type="submit" class="btn btn-info ">ENREGISTRER LES MODIFICATIONS</button>
 
@@ -107,30 +107,30 @@
       </div>
 
 
-      <div class="col-3">
+      <aside class="col-md-4">
      
-      
-        <span><img src="/images/<?php echo$products[0]->imgUrl; ?>"  alt="..."></span>
-        
+      <div>
+        <span><img style="max-width:100%;" src="/images/<?php echo$products[0]->imgUrl; ?>"  alt="..."></span>
+        <br>
       </div>
-      <div class="col-2">
-                <form action = "/products/modify/<?php echo $products[0]->id; ?>" method = "post" >
+        <div id="deleteProductForm" class="align-text-middle" >
+                <form action = "/products/delete/<?php echo $products[0]->id; ?>" method = "post" >
             <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
-          
-          
-          @csrf
-         
-          <button type="submit" class="btn btn-danger ">SUPPRESION</button>
-          </form> 
+              @csrf
+            <h2 > Suppression irreversible du produit </h2>
+              <button type="submit" class="btn btn-danger ">SUPPRESION TOTALE! </button>
+              </form> 
 
             </div>
+          
+    </aside>
+             
+
   </div>
-  
-
+       
 </div>
-
-
+   
 
 
 @endsection

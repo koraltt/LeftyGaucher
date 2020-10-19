@@ -39,14 +39,64 @@
     <h5 class="card-title">CUISINE</h5>          
     </div>
   </div>
+
   <div class="frontCategory">
-  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img-top" alt="..."></a>
-    <div class="card-body">
+  
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-body">
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+    
+  </div>
+</div>
+<!--
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+        
     <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
     </div>
   </div>
+</div>
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/stationery.jpg"  class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">PAPETERIE</h5>          
+    </div>
+  </div>
+</div>
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+  </div>
+</div>
 
-
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+  </div>
+</div>
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+  </div>
+</div>
+ -->
 
 </div>
 

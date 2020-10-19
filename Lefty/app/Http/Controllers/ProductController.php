@@ -40,7 +40,7 @@ class ProductController extends Controller
             } 
 
     public function create(){
-                return view('products.create');
+                return view('admin.create');
             }
 
     public function store(Request $request){
@@ -53,26 +53,30 @@ class ProductController extends Controller
                 $product->quantity = request('quantity');
                 $product->regularPrice = request('regularPrice');
                 $product->discountPrice = request('discountPrice');
+                $product->discountPrice = request('discountPrice');
+                $product->category_id = request('category_id');
                 $product->categoryFr = request('categoryFr');
-                $product->categoryEng = request('categoryEng');
+                $product->categoryEn = request('categoryEn');
                 
                 if($request->hasFile('imgUrl')){
                     $file = $request->file('imgUrl');
                     $destinationPath = 'images/';
                     $fileName = $file->getClientOriginalName(); 
                     $imagePath = $destinationPath.$fileName;
-                    $file->move($destinationPath, $fileName);
-                    $product->imgUrl = request($destinationPath, $imagePath);
-                
+                    $file->move($destinationPath, $fileName);                
+                   /*  $product->imgUrl = request($fileName); */
+      /*                $product->imgUrl = request($destinationPath, $imagePath); */
+                   $product->imgUrl = request($destinationPath,$fileName); 
                  }
 
                  if($request->hasFile('imgUrl2')){
                     $file = $request->file('imgUrl2');
                     $destinationPath= 'images/';
-                    $fileName = $file->getClientOriginalName(); 
-                    $imagePath = $destinationPath.$fileName;
-                    $file->move($destinationPath, $fileName);
-                    $product->imgUrl2 = request($destinationPath, $imagePath);
+                    $fileName2 = $file->getClientOriginalName(); 
+                    $imagePath = $destinationPath.$fileName2;
+                    $file->move($destinationPath, $fileName2);
+                    /* $product->imgUrl2 = request($destinationPath, $imagePath);  */
+                    $product->imgUrl2 = request($destinationPath, $fileName2); 
                 
                  }
               
@@ -102,6 +106,9 @@ class ProductController extends Controller
         echo '<a href = "/edit-records">Click Here</a> to go back.';
      } */
 
+
+
+     
      public function update(Request $request,$id) {
         $titleFr = $request->input('titleFr');
         $titleEng = $request->input('titleEng');
@@ -114,12 +121,34 @@ class ProductController extends Controller
         $category_id = $request->input('category_id');
         $categoryFr = $request->input('categoryFr');
         $categoryEn = $request->input('categoryEn');
-        $imgUrl = $request->input('imgUrl');
-        $imgUrl2 = $request->input('imgUrl2');
-        
-        
+        $imgUrl="";
+        $imgUrl2="";
+        if($request->hasFile('imgUrl')){
+            $file = $request->file('imgUrl');
+            $destinationPath = 'images/';
+            $fileName = $file->getClientOriginalName(); 
+            $imagePath = $destinationPath.$fileName;
+            $file->move($destinationPath, $fileName);                
+          
+         $imgUrl = $fileName; 
+         
+         
+         }
 
-        DB::table('products')
+         if($request->hasFile('imgUrl2')){
+            $file = $request->file('imgUrl2');
+            $destinationPath= 'images/';
+            $fileName2 = $file->getClientOriginalName(); 
+            $imagePath = $destinationPath.$fileName2;
+            $file->move($destinationPath, $fileName2);
+            $imgUrl2 = $fileName2;
+         
+/*             $imgUrl2 = request($destinationPath, $fileName2); */ 
+        
+         
+         }
+       
+         DB::table('products')
         ->where('id',$id)
         ->update(['titleFr' => $titleFr, 
         'titleEng' => $titleEng, 
@@ -134,7 +163,8 @@ class ProductController extends Controller
         'categoryEn' => $categoryEn,
         'imgUrl'=> $imgUrl,
         'imgUrl2'=>$imgUrl2]
-          
+        
+        
         
     );
     
@@ -142,7 +172,12 @@ class ProductController extends Controller
         return redirect('/admin');
 
  
-     }
+     } 
+
+    
+
+
+
 
      public function adminDetails($id){
 
@@ -166,8 +201,8 @@ class ProductController extends Controller
 
                    
             DB::table('products')->where('id',$id)->delete();
-           
-            return view('admin',['products' =>$products]);
+            return redirect('/admin')
+            ->with('success', 'Project deleted successfully');
         }
    
 
