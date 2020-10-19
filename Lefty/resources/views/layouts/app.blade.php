@@ -71,7 +71,7 @@
                                 
 
                                 <li class="nav-item">
-                                <a class="nav-link" href="{{ route('users.show', Auth::user()->name  )}}">
+                                <a class="nav-link" href="{{ route('users.show', Auth::user()->name)}}">
                                 {{Auth::user()->name }}
                                     </a>
                                 </li>

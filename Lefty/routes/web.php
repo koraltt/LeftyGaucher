@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,8 @@ Route::get('/products/{id}', [ProductController::class,'show'])->name('products.
 
 Route::group(['middleware' => ['auth']], function () {
 Route::get('/users/{name}', [UserController::class,'show'])->name('users.show')->middleware('auth');
+Route::get('/address/create', [AddressController::class,'create'])->name('addresses.create')->middleware('auth');
+Route::post('/address', [AddressController::class,'store'])->name('address.store')->middleware('auth');
 });
 
 Route::group(['middleware' => ['admin']], function () {

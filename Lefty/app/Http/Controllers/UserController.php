@@ -12,8 +12,15 @@ class UserController extends Controller
            }
     
         public function show($name){
-            $user= User::find($name);
-                return view('users.show', compact(['user' => $user]));
-            echo $user;
+            $user = User::select('select * from users where name = ?',[$name]);
+                return view('users.show', compact(['users' => $user]));
+          
     }
+
+        public function update($id){
+            $user= User::find($id);
+            $row = User::where($user)->update();
+            return view('users.show', compact(['users' => $user]));
+
+        }
 }
