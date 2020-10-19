@@ -14,38 +14,89 @@
 <div class="card-deck">
 
 
+
   <div class="frontCategory">
-    <a href=""><img src="images/site/stationery.jpg" class="card-img-top" alt="..."></a>
+    <a href="/category/1"><img src="images/site/stationery.jpg" class="card-img-top" alt="..."></a>
     <div class="card-body">
     <h5 class="card-title">PAPETERIE</h5>          
     </div>
   </div>
   <div class="frontCategory">
-  <a href=""><img src="images/site/musicInst.jpg" class="card-img-top" alt="..."></a>
+  <a href="/category/3"><img src="images/site/musicInst.jpg" class="card-img-top" alt="..."></a>
     <div class="card-body">
     <h5 class="card-title">INSTRUMENTS MUSICAUX</h5>          
     </div>
   </div>
   <div class="frontCategory">
-  <a href=""><img src="images/site/tools.jpg" class="card-img-top" alt="..."></a>
+  <a href="/category/2"><img src="images/site/tools.jpg" class="card-img-top" alt="..."></a>
     <div class="card-body">
     <h5 class="card-title">OUTILS</h5>          
     </div>
   </div>
   <div class="frontCategory">
-  <a href=""><img src="images/site/kitchen.jpg" class="card-img-top" alt="..."></a>
+  <a href="/category/6"><img src="images/site/kitchen.jpg" class="card-img-top" alt="..."></a>
     <div class="card-body">
     <h5 class="card-title">CUISINE</h5>          
     </div>
   </div>
+
   <div class="frontCategory">
-  <a href=""><img src="images/site/computerAcc.jpg" class="card-img-top" alt="..."></a>
-    <div class="card-body">
+  
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-body">
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+    
+  </div>
+</div>
+<!--
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+        
     <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
     </div>
   </div>
+</div>
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/stationery.jpg"  class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">PAPETERIE</h5>          
+    </div>
+  </div>
+</div>
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+  </div>
+</div>
 
-
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+  </div>
+</div>
+<div class="card bg-dark text-white">
+  <div class="frontCategory">
+  <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
+  <div class="card-img-overlay">
+       
+    <h5 class="card-title">ACCESSOIRES POUR ORDINATEURS</h5>          
+    </div>
+  </div>
+</div>
+ -->
 
 </div>
 
