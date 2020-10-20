@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Session;
 
 class UserController extends Controller
 {
@@ -11,9 +12,10 @@ class UserController extends Controller
         $this->middleware('auth');
            }
     
-        public function show($name){
-            $user = User::select('select * from users where name = ?',[$name]);
-                return view('users.show', compact(['users' => $user]));
+        public function show(Request $request, $name){
+            $user = User::find($name);
+            $value = $request->session()->get($model->id, 'shipping_address_id');
+            return view('users.show', compact(['users' => $user]));
           
     }
 
@@ -23,4 +25,16 @@ class UserController extends Controller
             return view('users.show', compact(['users' => $user]));
 
         }
+
+        
 }
+
+class UserObserver {
+
+    public function saved($model)
+    {
+        Log::info('Showing address: '.$model);
+    }
+
+}
+?>
