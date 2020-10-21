@@ -40,6 +40,7 @@
     </div>
   </div>
 
+
   <div class="frontCategory">
   
   <a href="/category/5"><img src="images/site/computerAcc.jpg" class="card-img" alt="..."></a>
