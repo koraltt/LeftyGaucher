@@ -119,7 +119,7 @@
 
               @csrf
             <h2 > Suppression irreversible du produit </h2>
-              <button type="submit" class="btn btn-danger ">SUPPRESION TOTALE! </button>
+              <button type="submit" class="btn btn-danger ">SUPPRESSION TOTALE! </button>
               </form> 
 
             </div>

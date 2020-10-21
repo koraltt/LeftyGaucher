@@ -61,8 +61,7 @@
                     <a class="dropdown-item" href="/category/4">Sport</a>
                                     </li>
                 <li class="nav-item"><a class="nav-link" href="/products">VOIR TOUT</a> </li>
-                <li class="nav-item"><a class="nav-link" href="/admin">ADMIN</a> </li>
-                <li class="nav-item"><a class="nav-link" href="/admin/create">CRÉER LE PRODUIT </a> </li>
+            
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -100,38 +99,33 @@
 
                          @if (auth()->user()->is_admin == 1)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('products.create') }}">Ajouter nouveau produit</a>
+                                    <a class="nav-link" href="{{ route('admin.create') }}">AJOUTER LE PRODUIT</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin')}}">ADMIN</a> 
+                                </li>
+                              
+
                                 @endif
-<<<<<<< Updated upstream
                                 
 
 
                                 <li class="nav-item">
                                 <a class="nav-link" href="{{ route('users.show', Auth::user()->name)}}">
-                                {{Auth::user()->name }}
+                                @if (auth()->user()->is_admin == 0)   {{Auth::user()->name }}  @endif
                                     </a>
+
                                 </li>
+
+
                                 <li class="nav-item">
-=======
-                            <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('users.show') }}">
-                                    {{ Auth::user()->name }}
-                                </a>
-                                </li>
-                                <li class="nav-item ">
->>>>>>> Stashed changes
                                     <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-<<<<<<< Updated upstream
                                     </li>
 
-=======
-                                </li>
->>>>>>> Stashed changes
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

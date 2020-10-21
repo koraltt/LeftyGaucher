@@ -36,11 +36,8 @@ Route::get('/admin/products', [ProductController::class,'handleAdmin'])->name('a
 Route::get('/products/create', [ProductController::class,'create'])->name('products.create')->middleware('admin');
 }); */
 
-<<<<<<< Updated upstream
-=======
 Route::get('/products/{id}', [ProductController::class,'show'])->name('products.show');
 Route::get('/users/{id}', [UserController::class,'show'])->name('users.show');
->>>>>>> Stashed changes
 
 Route::post('/products', [ProductController::class,'store'])->name('products.store')->middleware('admin');
 Route::delete('/admin/destroy/{id}', [ProductController::class,'destroy'])->name('products.destroy')->middleware('admin');
@@ -57,12 +54,12 @@ Route::get('/products/{id}', [ProductController::class,'show']);
 
 //admin group
 
-Route::group(['middleware' => ['admin']], function () {
+Route::group(['middleware' => ['admin']], function (){
 Route::get('/products/modify/{id}', [ProductController::class,'adminDetails']);
 Route::get('/admin', [ProductController::class,'handleAdmin'])->name('admin');
 Route::post('/products/modify/{id}', [ProductController::class,'update']);
 Route::post('/products/delete/{id}', [ProductController::class,'delete']);
-Route::get('/admin/create', [ProductController::class,'create']);
+Route::get('/admin/create', [ProductController::class,'create'])->name('admin.create');
 Route::post('/products', [ProductController::class,'store']);
 });
 

@@ -38,7 +38,7 @@ class PayPalController extends Controller
     ];
 
 $provider = new ExpressCheckout();
-
+$provider = new PayPalClient;
 $response = $provider->setExpressCheckout($checkoutData);
 dd($response);
 // dd('payment failed');
