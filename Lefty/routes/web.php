@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +33,7 @@ Route::get('/admin/products', [ProductController::class,'handleAdmin'])->name('a
 Route::get('/products/create', [ProductController::class,'create'])->name('products.create')->middleware('admin');
 }); */
 
-/* Route::get('/products/{id}', [ProductController::class,'show'])->name('products.show');
- */
-/* Route::group(['middleware' => ['admin']], function () {
+
 Route::post('/products', [ProductController::class,'store'])->name('products.store')->middleware('admin');
 Route::delete('/admin/destroy/{id}', [ProductController::class,'destroy'])->name('products.destroy')->middleware('admin');
 
