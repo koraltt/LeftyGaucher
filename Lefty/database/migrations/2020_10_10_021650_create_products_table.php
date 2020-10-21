@@ -24,10 +24,8 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->float('regularPrice', 8, 2);
             $table->float('discountPrice', 8, 2);
-            $table->bigInteger('category_id')->unsigned();
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('category');        
-            $table->string('categoryFr', 100);
-            $table->string('categoryEn', 100);
             $table->string('imgUrl', 100);
             $table->string('imgUrl2', 100);
             $table->boolean('deleted');
