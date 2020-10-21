@@ -77,7 +77,12 @@
 
                     <li class="nav-item">
                     <a class="nav-link" href="{{route('cart.index')}}"> PANIER <span class="badge badge-pill badge-dark">
-                           <i class="fas fa-shopping-cart"></i> {{ Cart::session(auth()->id())->getTotalQuantity()}} 
+                           <i class="fas fa-shopping-cart"></i>
+                           @auth
+                            {{ Cart::session(auth()->id())->getTotalQuantity()}} 
+                            @else
+                            0
+                            @endauth
                         </span></a>
                 </li>
 
