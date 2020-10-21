@@ -8,7 +8,11 @@
 <input type="button" value="Modifier" onclick="update()">
 <p>Email: {{Auth::user()->email }}</p>
 <input type="button" value="Modifier" onclick="update()">
-<p>{{Auth::user()->country}}</p>
-<a href="{{route('addresses.create')}}">Ajouter address</a>
+<div> Adress:
+<p>{{Auth::user()->address->country}}, {{Auth::user()->address->province}}</p>
+<p>{{Auth::user()->address->city}}</p>
+<p>{{Auth::user()->address->postal_code}} {{Auth::user()->address->apt_num}} - {{Auth::user()->address->house_num}} {{Auth::user()->address->street}}</p>
+</div>
+<a href="{{route('addresses.create')}}">Ajouter ou modifier votre address</a>
 @endsection
 

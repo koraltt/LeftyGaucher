@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Address;
 use App\Models\Session;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 
 class AddressController extends Controller
@@ -27,20 +28,22 @@ class AddressController extends Controller
         $address->street = request('street');
         $address->house_num = request('house_num');
         $address->apt_num = request('apt_num');
-
+        
         Address::saved(function($model)
         {
             Log::info('Showing address: '.$model->id);
-            $addressAdded = $address->store($model->id);
-            session(['key' => 'value']);
+            $user = Auth::user();
+            Log::info('Showing user: '.$user);
+            $user->shipping_address_id = $model->id;
+            $user->billing_address_id = $model->id;
+            $user->save();
         });
 
+        
         $address->save();
 
-        
-
         return redirect('/users/{name}')->with('mssg', "L'adress' est sauvegardé");
-        error_log($address);  
+          
      }
 }
 

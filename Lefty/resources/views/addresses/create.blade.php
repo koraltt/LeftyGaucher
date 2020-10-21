@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h1> Entrer l'adress'</h1>
+<h1> Entrer l'adress</h1>
 
 <form action="/address" method="POST">
 @csrf

@@ -15,9 +15,9 @@ class AddAddressesToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->bigInteger('shipping_address_id')->unsigned()->nullable();
-            $table->foreign('shipping_address_id')->references('id')->on('users');  
+            $table->foreign('shipping_address_id')->references('id')->on('addresses');  
             $table->bigInteger('billing_address_id')->unsigned()->nullable();
-            $table->foreign('billing_address_id')->references('id')->on('users');  
+            $table->foreign('billing_address_id')->references('id')->on('addresses');  
         });
     }
 
