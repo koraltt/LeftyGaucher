@@ -76,6 +76,7 @@
                                     <a class="nav-link" href="{{ route('products.create') }}">Ajouter nouveau produit</a>
                                 </li>
                                 @endif
+<<<<<<< Updated upstream
                                 
 
 
@@ -85,13 +86,25 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+=======
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ route('users.show') }}">
+                                    {{ Auth::user()->name }}
+                                </a>
+                                </li>
+                                <li class="nav-item ">
+>>>>>>> Stashed changes
                                     <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+<<<<<<< Updated upstream
                                     </li>
 
+=======
+                                </li>
+>>>>>>> Stashed changes
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

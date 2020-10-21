@@ -33,6 +33,11 @@ Route::get('/admin/products', [ProductController::class,'handleAdmin'])->name('a
 Route::get('/products/create', [ProductController::class,'create'])->name('products.create')->middleware('admin');
 }); */
 
+<<<<<<< Updated upstream
+=======
+Route::get('/products/{id}', [ProductController::class,'show'])->name('products.show');
+Route::get('/users/{id}', [UserController::class,'show'])->name('users.show');
+>>>>>>> Stashed changes
 
 Route::post('/products', [ProductController::class,'store'])->name('products.store')->middleware('admin');
 Route::delete('/admin/destroy/{id}', [ProductController::class,'destroy'])->name('products.destroy')->middleware('admin');
